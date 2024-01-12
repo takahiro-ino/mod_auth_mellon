@@ -4,6 +4,9 @@ mod_auth_mellon is an authentication module for Apache. It authenticates
 the user against a SAML 2.0 IdP, and grants access to directories
 depending on attributes received from the IdP.
 
+This module, under the `latchset` organization, is under active maintenance.
+It was forked from the original Uninett repository when Uninett chose to
+retire their version.
 
 ## Dependencies
 
