@@ -211,7 +211,7 @@ static char *am_generate_metadata(apr_pool_t *p, request_rec *r)
  %s\n\
 </EntityDescriptor>",
       sp_entity_id, cfg->sp_entity_id ? "" : "metadata", 
-      cert, url, url, url, url, url, am_optional_metadata(p, r));
+      cert, url, url, url, url, url, url, am_optional_metadata(p, r));
 }
 
 
