@@ -1,3 +1,20 @@
+Version 0.19.0
+---------------------------------------------------------------------------
+
+Enhancements:
+
+* Support for HTTP-POST binding on Singe Logout endpoint.
+
+* Update documentation.
+
+Cleanup:
+
+* Raise minimum Lasso version to 2.4, cleaning up legacy code for
+  compatibility with older versions, including the obsolete
+  `MellonIdPPublicKeyFile` setting which was not working with recent
+  Lasso versions.
+
+
 Version 0.18.1
 ---------------------------------------------------------------------------
 
