@@ -5,6 +5,9 @@ Enhancements:
 
 * Support for HTTP-POST binding on Singe Logout endpoint.
 
+* Use correct Apache API to get the useragent IP, for compatibiltiy with
+  e.g. mod_rpaf/mod_remoteip.
+
 * Update documentation.
 
 Cleanup:
