@@ -425,8 +425,10 @@ MellonDiagnosticsEnable Off
 
         # MellonSPMetadataFile is the full path to the file containing
         # the metadata for this service provider.
-        # If mod_auth_mellon was compiled against Lasso version 2.2.2
-        # or higher, this option is optional. Otherwise, it is mandatory.
+        # This option is optional. If set, this metadata will be used
+        # to configure Mellon. If the XML contains multiple entities, the
+        # the first one will be used. This XML will also be published at
+        # Mellon's metadata endpoint.
         # Default: None set.
         MellonSPMetadataFile /etc/apache2/mellon/sp-metadata.xml
 
@@ -446,9 +448,7 @@ MellonDiagnosticsEnable Off
 
         # MellonSPPrivateKeyFile is a .pem file which contains the private
         # key of the service provider. The .pem-file cannot be encrypted
-        # with a password. If built with lasso-2.2.2 or higher, the
-        # private key only needs to be readable by root, otherwise it has
-        # to be readable by the Apache pseudo user.
+        # with a password. The private key only needs to be readable by root.
         # Default: None set.
         MellonSPPrivateKeyFile /etc/apache2/mellon/sp-private-key.pem
 
@@ -465,11 +465,9 @@ MellonDiagnosticsEnable Off
         # to MellonIdPMetadataFile. If omitted, no metadata validation will
         # take place.
         #
-        # Multiple IdP metadata can be configured by using multiple
-        # MellonIdPMetadataFile directives.
-        # If your lasso library is recent enough (higher than 2.3.5),
-        # then MellonIdPMetadataFile will accept an XML file containing
-        # descriptors for multiple IdPs.
+        # Multiple IdP metadata can be configured by pointing to an
+        # XML file containing descriptors for multiple IdPs, or you
+        # can repeat this directive for each different IdP.
         # If you have multiple IdPs enabled, you will need to provide a
         # discovery method to pick the right IdP for this user (see below),
         # if none is given, Mellon will fall back to the first listed.
@@ -477,9 +475,8 @@ MellonDiagnosticsEnable Off
         # Default: None set.
         MellonIdPMetadataFile /etc/apache2/mellon/idp-metadata.xml
 
-        # MellonIdPMetadataGlob is a glob(3) pattern enabled  alternative 
-        # to MellonIdPMetadataFile. Like MellonIdPMetadataFile it will
-        # accept an optional validating chain if lasso is recent enough.
+        # MellonIdPMetadataGlob is a glob(3) pattern enabled alternative
+        # to MellonIdPMetadataFile.
         #
         # Default: None set.
         #MellonIdPMetadataGlob /etc/apache2/mellon/*-metadata.xml

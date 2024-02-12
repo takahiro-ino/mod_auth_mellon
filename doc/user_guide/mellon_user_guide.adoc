@@ -1539,6 +1539,8 @@ to interoperate. Out of sync metadata is a very common deployment
 error. See <<metadata_creation, Metadata Creation>> for how Mellon
 metadata is created. `MellonSPMetadataFile` is optional, Mellon can
 create its own metadata from its initial configuration parameters.
+Should this file contain multiple SP entities, only the first one
+found will be used.
 
 <5> The private cryptographic key used by Mellon to sign its SAML
 data. See <<metadata_keys>> for more detail.
