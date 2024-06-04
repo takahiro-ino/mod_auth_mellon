@@ -872,11 +872,11 @@ requests that trigger authentication should now be stored while the
 user logs in.
 
 
-## Example to support both SAML and Basic Auth
+## Example to support both SAML and different auth methods
 
 The below snippet will allow for preemptive basic auth (such as from a REST client)
 for the "/auth" path, but if accessed interactively will trigger SAML auth with
-mod_auth_mellon. 
+mod_auth_mellon.
 
 ```ApacheConf
 <Location />
@@ -903,6 +903,26 @@ mod_auth_mellon.
 </Location>
 ```
 
+In a similar vain you can exclude a subpath from Mellon authentication by adding
+a Location block that exempts the path after:
+
+```ApacheConf
+<VirtualHost *:443>
+        <Location />
+            AuthType "Mellon"
+            Require valid-user
+            MellonEnable "auth"
+            ...
+
+            Require all granted
+        </Location>
+
+        <Location /noSSO>
+            MellonEnable "off"
+            Require all granted
+        </Location>
+</VirtualHost>
+```
 
 ## Mellon & User Agent Caching behavior
 
