@@ -2746,10 +2746,9 @@ time information.
 
 Since you're most likely using the SAML Web-SSO profile, which is
 entirely browser based, you can use any of the browser tools to watch
-HTTP requests and responses. The Firefox web browser provides the
-FireBug add-on and the Chrome browser offers  Developer Tools. Each of
-these browsers also has additional add-ons to display SAML messages;
-see <<inspect_saml_messages>>.
+HTTP requests and responses. Besides the standard web development tools
+in each browser, there's a browser add-on specifically to display SAML
+messages; see <<inspect_saml_messages>>.
 
 NOTE: The easiest and most complete way to trace HTTP requests and
 responses during SAML flow, capture SAML messages, and examine how
@@ -2784,20 +2783,23 @@ SAML messages transit though the browser in Web-SSO, it is possible to
 write a browser extension to capture and decode the SAML messages
 exchanged between the SP and IdP.
 
-==== Firefox SAML Tracer [[saml_tracer]]
+==== SAML Tracer [[saml_tracer]]
 
-The Firefox
-https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/[SAML
-Tracer] Add-On will display decoded SAML messages used during single
-sign-on and single logout. SAML Tracer is not capable of decrypting
-an encrypted IdP response, because it does not have access to the IdP's
-public encryption key contained in the IdP's metadata. See
-<<encrypted_response>> for how to deal with this issue.
+The SAML Tracer browser exteion is available
+https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/[for
+Firefox] and
+https://chromewebstore.google.com/detail/saml-tracer/mpdajninpobndbfcldcmbpnnbhibjmch[for
+Chome] and will display decoded SAML
+messages used during single sign-on and single logout. SAML Tracer is
+not capable of decrypting an encrypted IdP response, because it does
+not have access to the IdP's public encryption key contained in the
+IdP's metadata. See <<encrypted_response>> for how to deal with this
+issue.
 
 To use SAML Tracer you must first install the add-on. Then each time
-you want to use SAML Tracer you will need to go to the Firefox menu
+you want to use SAML Tracer you will need to go to the browser's menu
 and select the SAML Tracer option. This will bring up a separate
-Firefox window which looks like this:
+window which looks like this:
 
 image::saml-tracer.svg[]
 
@@ -2817,19 +2819,6 @@ SAML messages are usually transported in HTTP parameters, so this is
 where you can see the raw SAML data before being decoded into a
 complete SAML message. The `http` tab shows you the HTTP headers
 associated with the HTTP request/response.
-
-==== Chrome, SAML Chrome Panel
-
-The Chrome Web browser offers several add-ons to display SAML
-messages. The most commonly used is 
-https://chrome.google.com/webstore/detail/saml-chrome-panel/paijfdbeoenhembfhkhllainmocckace[SAML
-Chrome Panel]. SAML Chrome Panel integrates with the Chrome developer
-tools. 
-
-Here is an example of the SAML Chrome Panel in the developer tools
-panel:
-
-image::chrome_SAML_Chrome_Panel.svg[]
 
 ==== If the IdP response is encrypted [[encrypted_response]]
 
