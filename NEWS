@@ -1,3 +1,15 @@
+Version 0.19.1
+---------------------------------------------------------------------------
+
+Cleanup:
+
+* Remove legacy code that is unused because of minimum requirements.
+
+* Cleanup HTML in rendered forms.
+
+* Documentation cleanups and small improvements.
+
+
 Version 0.19.0
 ---------------------------------------------------------------------------
 
