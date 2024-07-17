@@ -10,7 +10,7 @@ retire their version.
 
 ## Dependencies
 
-mod_auth_mellon has four dependencies:
+mod_auth_mellon has the following dependencies:
  * pkg-config
  * Apache (>=2.0)
  * OpenSSL
